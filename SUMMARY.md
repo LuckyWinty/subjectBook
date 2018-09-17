@@ -17,7 +17,5 @@
 * [安全相关](an-quan-xiang-guan.md)
   * [web安全](an-quan-xiang-guan/weban-quan.md)
 * linux
-  * 常用命令
-
-
+  * [常用命令](chang-yong-ming-ling.md)
 
