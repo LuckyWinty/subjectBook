@@ -12,3 +12,9 @@
 
 
 
+工具推荐：
+
+Base64：最推荐的是利用 webpack 来进行 Base64 的编码——webpack 的[url-loader](https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Fwebpack-contrib%2Furl-loader)非常聪明，它除了具备基本的 Base64 转码能力，还可以结合文件大小，帮我们判断图片是否有必要进行 Base64 编码。
+
+svg：图库http://www.iconfont.cn/
+
