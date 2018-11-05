@@ -28,7 +28,5 @@
   * [DNS解析](dnsjie-xi.md)
 * 性能优化
   * 图片
-    * 图片格式
-
-
+    * [图片格式](tu-pian-ge-shi.md)
 
