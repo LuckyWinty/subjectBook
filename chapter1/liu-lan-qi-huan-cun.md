@@ -28,6 +28,10 @@ HTTP 缓存是我们日常开发中最为熟悉的一种缓存机制。它又分
 
 ![](/assets/httpprocess.png)
 
+### 强缓存的特征
+
+强缓存是利用 http 头中的 Expires 和 Cache-Control 两个字段来控制的。强缓存中，当请求再次发出时，浏览器会根据其中的 expires 和 cache-control 判断目标资源是否“命中”强缓存，若命中则直接从缓存中获取资源，不会再与服务端发生通信。
+
 ### 强缓存的实现：从 expires 到 cache-control
 
 1、实现强缓存，过去我们一直用`expires`。当服务器返回响应时，在 Response Headers 中将过期时间写入 expires 字段。expires 是一个时间戳，接下来如果我们试图再次向服务器请求资源，浏览器就会先对比本地时间和 expires 的时间戳，如果本地时间小于 expires 设定的过期时间，那么就直接去缓存中取这个资源。它最大的问题在于对“本地时间”的依赖。
@@ -38,7 +42,15 @@ HTTP 缓存是我们日常开发中最为熟悉的一种缓存机制。它又分
 
 3、Cache-Control中的值no-cache 绕开了浏览器：我们为资源设置了 no-cache 后，每一次发起请求都不会再去询问浏览器的缓存情况，而是直接向服务端去确认该资源是否过期。Cache-Control中的值no-store 比较绝情，顾名思义就是不使用任何缓存策略。在 no-cache 的基础上，它连服务端的缓存确认也绕开了，只允许你直接向服务端发送请求、并下载完整的响应。
 
+### 协商缓存：浏览器与服务器合作之下的缓存策略
 
+协商缓存机制下，浏览器需要向服务器去询问缓存的相关信息，进而判断是重新发起请求、下载完整的响应，还是从本地获取缓存的资源。 如果服务端提示缓存资源未改动（Not Modified），资源会被重定向到浏览器缓存，这种情况下网络请求对应的状态码是 304。
+
+### 协商缓存的实现：从 Last-Modified 到 Etag
+
+1、Last-Modified 是一个时间戳，如果我们启用了协商缓存，它会在首次请求时随着 Response Headers 返回。随后我们每次请求时，会带上一个叫 If-Modified-Since 的时间戳字段，它的值正是上一次 response 返回给它的 last-modified 值。服务器接收到这个时间戳后，会比对该时间戳和资源在服务器上的最后修改时间是否一致，从而判断资源是否发生了变化。如果发生了变化，就会返回一个完整的响应内容，并在 Response Headers 中添加新的 Last-Modified 值；否则，返回如上图的 304 响应，Response Headers 不会再添加 Last-Modified 字段。但是有些场景下服务器并没有正确感知文件的变化。例如没改动或改动太快。
+
+2、Etag 是由服务器为每个资源生成的唯一的**标识字符串**，这个标识字符串是基于文件内容编码的，只要文件内容不同，它们对应的 Etag 就是不同的，反之亦然。因此 Etag 能够精准地感知文件的变化。Etag 的生成过程需要服务器额外付出开销，会影响服务端的性能，这是它的弊端。因此启用 Etag 需要我们审时度势。正如我们刚刚所提到的——Etag 并不能替代 Last-Modified，它只能作为 Last-Modified 的补充和强化存在。 Etag 在感知文件变化上比 Last-Modified 更加准确，优先级也更高。当 Etag 和 Last-Modified 同时存在时，以 Etag 为准。
 
 [https://www.cnblogs.com/etoah/p/5579622.html](https://www.cnblogs.com/etoah/p/5579622.html)
 
