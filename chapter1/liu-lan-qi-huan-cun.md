@@ -30,9 +30,9 @@
 
 上述代码的作用是告诉浏览器当前页面不被缓存，每次访问都需要去服务器拉取。但是:
 
-  a. 仅有IE才能识别这段meta标签含义，其它主流浏览器仅识别“Cache-Control: no-store”的meta标签。
+a. 仅有IE才能识别这段meta标签含义，其它主流浏览器仅识别“Cache-Control: no-store”的meta标签。
 
-  b. 在IE中识别到该meta标签含义，并不一定会在请求字段加上Pragma，但的确会让当前页面每次都发新请求_（仅限页面，页面上的资源则不受影响）_。
+b. 在IE中识别到该meta标签含义，并不一定会在请求字段加上Pragma，但的确会让当前页面每次都发新请求_（仅限页面，页面上的资源则不受影响）_。
 
 ## HTTP 缓存机制
 
@@ -85,10 +85,4 @@ Service Worker 是一种独立于主线程之外的 Javascript 线程。它脱�
 * 同的页面只要共享了同一个 HTTP2 连接，那么它们就可以共享同一个 Push Cache。
 
 
-
-[https://www.cnblogs.com/slly/p/6732749.html](https://www.cnblogs.com/slly/p/6732749.html)
-
-[https://www.cnblogs.com/shixiaomiao1122/p/7591556.html](https://www.cnblogs.com/shixiaomiao1122/p/7591556.html)
-
-[https://www.cnblogs.com/etoah/p/5579622.html](https://www.cnblogs.com/etoah/p/5579622.html)
 
