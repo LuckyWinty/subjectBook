@@ -20,6 +20,20 @@
 
 4. Push Cache
 
+## Meta标签
+
+（1）使用HTML Meta 标签
+
+```
+<meta http-equiv="Pragma" content="no-cache">
+```
+
+上述代码的作用是告诉浏览器当前页面不被缓存，每次访问都需要去服务器拉取。但是:
+
+  a. 仅有IE才能识别这段meta标签含义，其它主流浏览器仅识别“Cache-Control: no-store”的meta标签。
+
+  b. 在IE中识别到该meta标签含义，并不一定会在请求字段加上Pragma，但的确会让当前页面每次都发新请求_（仅限页面，页面上的资源则不受影响）_。
+
 ## HTTP 缓存机制
 
 HTTP 缓存是我们日常开发中最为熟悉的一种缓存机制。它又分为**强缓存**和**协商缓存**。优先级较高的是强缓存，在命中强缓存失败的情况下，才会走协商缓存。
@@ -67,14 +81,10 @@ Service Worker 是一种独立于主线程之外的 Javascript 线程。它脱�
 * Push Cache 是指 HTTP2 在 server push 阶段存在的缓存。
 * Push Cache 是缓存的最后一道防线。
 * 浏览器只有在 Memory Cache、HTTP Cache 和 Service Worker Cache 均未命中的情况下才会去询问 Push Cache。
-*  Push Cache 是一种存在于会话阶段的缓存，当 session 终止时，缓存也随之释放。 不
+* Push Cache 是一种存在于会话阶段的缓存，当 session 终止时，缓存也随之释放。 不
 * 同的页面只要共享了同一个 HTTP2 连接，那么它们就可以共享同一个 Push Cache。
 
 
-
-[https://www.cnblogs.com/etoah/p/5579622.html](https://www.cnblogs.com/etoah/p/5579622.html)
-
-[https://www.cnblogs.com/etoah/p/5579622.html](https://www.cnblogs.com/etoah/p/5579622.html)
 
 [https://www.cnblogs.com/slly/p/6732749.html](https://www.cnblogs.com/slly/p/6732749.html)
 
