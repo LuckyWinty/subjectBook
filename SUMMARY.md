@@ -27,7 +27,9 @@
   * [常见场景](chang-jian-chang-jing.md)
 * http网络相关
   * [DNS解析](dnsjie-xi.md)
-* 性能优化
+* [性能优化](xing-neng-you-hua.md)
   * 图片
     * [图片格式](tu-pian-ge-shi.md)
+  * [浏览器](xing-neng-you-hua/liu-lan-qi.md)
+    * [浏览器渲染过程](xing-neng-you-hua/liu-lan-qi/liu-lan-qi-xuan-ran-guo-cheng.md)
 
