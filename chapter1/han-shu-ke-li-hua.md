@@ -24,3 +24,28 @@ add(1)(2)(3)(4)(5) = 15
 
 2、一般用操作符单独对对象进行转换的时候，如果对象存在valueOf或toString改写的话，就先调用改写的方法，valueOf更高级，如果没有被改写，则直接调用对象原型的valueOf方法。如果是alert弹窗的话，直接调用toString方法。
 
+3、当使用console.log，或者进行运算时，隐式转换就会发生。
+
+因此，解题的关键就是，每次调用都返回一个函数，这个函数负责收集参数每次调用传进来的参数。然后在隐式调用的时候，求和输出。代码如下：
+
+```
+function add(){
+  var args = [].slice.call(arguments);
+
+  var _add = function(){
+    var list = [].slice.call(arguments);
+    args = args.concat(list);
+    return _add;
+  }
+  _add.toString = function(){
+    return args.reduce(function(pre,next){
+      return pre+next;
+    })
+  }
+
+  return _add;
+}
+```
+
+
+
