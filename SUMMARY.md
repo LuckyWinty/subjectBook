@@ -19,6 +19,7 @@
   * [布局](cssxiang-guan/bu-ju.md)
   * [css技巧](cssxiang-guan/cssji-qiao.md)
   * [BFC深入理解](cssxiang-guan/bfcshen-ru-li-jie.md)
+  * [一些兼容处理](cssxiang-guan/yi-xie-jian-rong-chu-li.md)
 * [安全相关](an-quan-xiang-guan.md)
   * [web安全](an-quan-xiang-guan/weban-quan.md)
 * linux
