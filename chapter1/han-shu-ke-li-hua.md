@@ -47,5 +47,15 @@ function add(){
 }
 ```
 
+简洁式：
+
+```
+function mul(x) {
+	const result = (y) => mul(x + y); 
+	result.valueOf = () => x;
+	return result;
+}
+```
+
 
 
