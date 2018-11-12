@@ -42,8 +42,8 @@ HTTPS最大的特点是安全， 在保护用户隐私，防止流量劫持方�
 
 影响主要来自两方面
 
-1. 协议交互所增加的网络 RTT\(round trip time\)。      
-2. 加解密相关的计算耗时。 
+1. 协议交互所增加的网络 RTT\(round trip time\)。      
+2. 加解密相关的计算耗时。 
 
 **网络耗时增加**
 
@@ -52,9 +52,9 @@ http协议下，用户只需要完成 TCP 三次握手建立 TCP 连接就能够
 HTTPS 的访问过程，相比 HTTP 要复杂很多，在部分场景下，使用 HTTPS 访问有可能增加 7 个 RTT。  
 ![](/assets/https.png)
 
-1. 三次握手建立 TCP 连接。耗时一个 RTT。 
-2. 使用 HTTP 发起 GET 请求，服务端返回 302 跳转到 https://www.baidu.com 。需要一个 RTT 以及 302 跳转延时。
-3. 三次握手重新建立 TCP 连接。耗时一个 RTT。 
+1. 三次握手建立 TCP 连接。耗时一个 RTT。 
+2. 使用 HTTP 发起 GET 请求，服务端返回 302 跳转到 [https://www.baidu.com](https://www.baidu.com) 。需要一个 RTT 以及 302 跳转延时。
+3. 三次握手重新建立 TCP 连接。耗时一个 RTT。 
 4. TLS 完全握手阶段一。耗时至少一个 RTT。
 5. 解析 CA 站点的 DNS。耗时一个 RTT。
 6. 三次握手建立 CA 站点的 TCP 连接。耗时一个 RTT。
@@ -63,6 +63,25 @@ HTTPS 的访问过程，相比 HTTP 要复杂很多，在部分场景下，使�
 9. 完全握手结束后，浏览器和服务器之间进行应用层（也就是 HTTP）数据传输。
 
 当然不是每个请求都需要增加 7 个 RTT 才能完成 HTTPS 首次请求交互。大概只有不到 0.01% 的请求才有可能需要经历上述步骤。
+
+**计算耗时增加**
+
+1. 浏览器计算耗时。
+2. 服务端计算耗时。
+
+## HTTPS的性能优化
+
+一、**HTTPS 访问速度优化**
+
+1、设置HSTS，服务端返回一个 HSTS 的 http header，浏览器获取到 HSTS 头部之后，在一段时间内，不管用户输入`www.baidu.com`还是`http://www.baidu.com`，都会默认将请求内部跳转成`https://www.baidu.com`。Chrome, firefox, ie 都支持了 HSTS。
+
+2、Session resume，复用session可以减少 CPU 消耗，因为不需要进行非对称密钥交换的计算。可以提升访问速度，不需要进行完全握手阶段二，节省了一个 RTT 和计算耗时。复用有2种方式，Session cache和Session ticket。
+
+3、Nginx设置Ocsp stapling。Ocsp 全称在线证书状态检查协议 \(rfc6960\)，用来向 CA 站点查询证书状态，比如是否撤销。通常情况下，浏览器使用 OCSP 协议发起查询请求，CA 返回证书状态内容，然后浏览器接受证书是否可信的状态。这个过程非常消耗时间，因为 CA 站点有可能在国外，网络不稳定，RTT 也比较大。如果不需要查询则可节约时间。
+
+4、使用 SPDY 或者 HTTP2。
+
+5、False start。简单概括 False start 的原理就是在 client\_key\_exchange 发出时将应用层数据一起发出来，能够节省一个 RTT。
 
 
 
