@@ -3,7 +3,7 @@
 * [html相关](README.md)
   * [dom](dom.md)
 * [js相关](chapter1.md)
-  * 事件机制
+  * [事件机制](chapter1/shi-jian-ji-zhi.md)
     * [浏览器事件机制](chapter1/liu-lan-qi-shi-jian-ji-zhi.md)
     * [js引擎事件循环机制](chapter1/jsyin-qing-shi-jian-xun-huan-ji-zhi.md)
   * 缓存
