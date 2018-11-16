@@ -11,8 +11,9 @@
     * [CDN的缓存与回源机制](chapter1/cdnde-huan-cun-yu-hui-yuan-ji-zhi.md)
   * [框架](chapter1/kuang-jia.md)
     * [webpack](chapter1/kuang-jia/webpack.md)
-  * ES6/7/8
+  * [ES6/7/8](chapter1/es678.md)
     * [基础](chapter1/ji-chu.md)
+    * [Promise](chapter1/promise.md)
   * 其他
     * [引擎相关](chapter1/yin-qing-xiang-guan.md)
     * [函数柯里化](chapter1/han-shu-ke-li-hua.md)
