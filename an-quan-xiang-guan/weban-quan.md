@@ -26,6 +26,20 @@
 
 6. 设置浏览器的安全设置来防范典型的XSS注入
 
+7. CSP,CSP 全称为 Content Security Policy，即内容安全策略。主要以白名单的形式配置可信任的内容来源，在网页中，能够使白名单中的内容正常执行（包含 JS，CSS，Image 等等），而非白名单的内容无法正常执行，从而减少跨站脚本攻击（XSS），当然，也能够减少运营商劫持的内容注入攻击。
+
+CSP配置方式：
+
+```
+1、meta
+
+<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+
+2、Http 头部
+Content-Security-Policy:
+script-src 'unsafe-inline' 'unsafe-eval' 'self'  *.54php.cn *.yunetidc.com *.baidu.com *.cnzz.com  *.duoshuo.com *.jiathis.com;report-uri /error/csp
+```
+
 #### 2.SQL注入
 
 ###### 攻击方法：
