@@ -15,7 +15,7 @@
     * [基础](chapter1/ji-chu.md)
     * [Promise](chapter1/promise.md)
   * 其他
-    * [引擎相关](chapter1/yin-qing-xiang-guan.md)
+    * [模块化](chapter1/yin-qing-xiang-guan.md)
     * [函数柯里化](chapter1/han-shu-ke-li-hua.md)
 * [css相关](cssxiang-guan.md)
   * [布局](cssxiang-guan/bu-ju.md)
