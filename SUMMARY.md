@@ -40,4 +40,5 @@
 * [node](node.md)
   * [内存泄漏记录](node/nei-cun-xie-lou-ji-lu.md)
   * [v8GC](node/v8gc.md)
+  * [node容错](node/noderong-cuo.md)
 
