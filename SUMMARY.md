@@ -41,4 +41,6 @@
   * [内存泄漏记录](node/nei-cun-xie-lou-ji-lu.md)
   * [v8GC](node/v8gc.md)
   * [node容错](node/noderong-cuo.md)
+* [一些试题收集](yi-xie-shi-ti-shou-ji.md)
+  * [VUE](yi-xie-shi-ti-shou-ji/vue.md)
 
