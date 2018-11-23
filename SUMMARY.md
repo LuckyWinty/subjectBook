@@ -43,4 +43,6 @@
   * [node和浏览器容错](node/noderong-cuo.md)
 * [一些试题收集](yi-xie-shi-ti-shou-ji.md)
   * [VUE](yi-xie-shi-ti-shou-ji/vue.md)
+* nginx
+  * [基础](ji-chu.md)
 
