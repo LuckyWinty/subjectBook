@@ -8,7 +8,11 @@
 
 2. -f 强制覆盖同名文件
 
-3. -r  按递归方式保留原[目录结构](https://www.baidu.com/s?wd=%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao)复制文件
+3. -r  按递归方式保留原[目录结构](https://www.baidu.com/s?wd=目录结构&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao)复制文件
 
-三、命令行中输入：cp     -r         /tmp/a              /root/a
+三、命令行中输入：cp     -r         /tmp/a              /root/a
+
+下载：
+
+scp webadmin@192.168.200.48:/export/servers/nginx/conf/nginx.conf ~/JD/project/temp
 
