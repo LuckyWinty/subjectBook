@@ -13,7 +13,7 @@ SSI：Server Side Include，是一种基于服务端的网页制作技术，大�
 ```
     server {  
         listen  10.3.9.27:80;  
-        server_name  www.tanteng.me;  
+        server_name  www.test.me;  
         location / {  
             ssi on;  
             ssi_silent_errors on;  
