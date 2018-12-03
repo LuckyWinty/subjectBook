@@ -16,5 +16,26 @@
 
 `translateZ`值就可以，如`translateZ(100px).`
 
+## 文字居中兼容
 
+正常处理文字上下居中的手段是让元素height和line-height相等，但是安卓环境下当字体大小&lt;14px/0.7rem的时候会出现居中失效的情况
+
+处理方式主要有两个：
+
+1）判断系统环境（安卓/IOS）分别作微调；
+
+2）font-size、height、width全部放大为2倍，利用transform进行缩放  
+**height: 1rem;  
+width: 2rem;  
+font-size: 0.5rem;**
+
+变成：**  
+height: 2rem;  
+width: 4rem;  
+font-size: 1rem;  
+transform: scale\(0.5\);**
+
+但由于放大之后占据空间，左右会留白，需要利用margin负值【**margin: -0.35rem -0.45rem 0; 】**调整
+
+3）有解决方案是将rem改为px。
 
