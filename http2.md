@@ -24,8 +24,8 @@ HTTP/2引入二进制数据帧和流的概念，其中帧对数据进行顺序�
 * **header压缩，**  
   如上文中所言，对前面提到过HTTP1.x的header带有大量信息，而且每次都要重复发送，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自cache一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。
 
-* **服务端推送**
-  （server push），同SPDY一样，HTTP2.0也具有server push功能。目前，有大多数网站已经启用HTTP2.0，例如
+* **服务端推送**  
+  （server push），同SPDY一样，HTTP2.0也具有server push功能。目前，有大多数网站已经启用HTTP2.0，例如  
   [YouTuBe](https://www.youtube.com/)，[淘宝网](http://www.taobao.com/)等网站，利用chrome控制台可以查看是否启用H2
 
 ### **SPDY**
@@ -44,4 +44,14 @@ HTTP/2引入二进制数据帧和流的概念，其中帧对数据进行顺序�
    （server push），采用了SPDY的网页，例如我的网页有一个sytle.css的请求，在客户端收到sytle.css数据的同时，服务端会将sytle.js的文件推送给客户端，当客户端再次尝试获取sytle.js时就可以直接从缓存中获取到，不用再发请求了。
 
 SPDY位于HTTP之下，TCP和SSL之上，这样可以轻松兼容老版本的HTTP协议\(将HTTP1.x的内容封装成一种新的frame格式\)，同时可以使用已有的SSL功能。
+
+## SPDY与HTTP2的区别 {#SPDY与HTTP2的区别}
+
+* 头部压缩算法，SPDY，通用的deflate算法\[注1\]；HTTP2，专门为压缩头部设计的HPACK算法
+* SPDY必须在TLS上运行，HTTP2可在TCP上直接使用，因为增加了HTTP1.1的Upgrade机制
+* 更加完善的协议商讨和确认流程
+* 更加完善的Server Push流程
+* 增加控制帧的种类，并对帧的格式考虑的更细致
+
+
 
