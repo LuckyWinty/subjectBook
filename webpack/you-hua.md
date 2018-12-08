@@ -21,5 +21,11 @@ module: {
 }
 ```
 
+除此之外，如果我们选择开启缓存将转译结果缓存至文件系统，则至少可以将 babel-loader 的工作效率提升两倍。要做到这点，我们只需要为 loader 增加相应的参数设定：
+
+```
+loader: 'babel-loader?cacheDirectory=true'
+```
+
 
 
