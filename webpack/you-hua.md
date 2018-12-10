@@ -80,6 +80,8 @@ module.exports = {
 5、以UglifyJsPlugin 为例，在压缩过程中对碎片化的冗余代码（如 console 语句、注释等）进行自动化删除。
 
 ```
+webpack3 的用法：
+
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
  plugins: [
