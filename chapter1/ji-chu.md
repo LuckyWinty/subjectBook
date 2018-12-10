@@ -131,3 +131,26 @@ B.prototype.__proto__ === A.prototype // true
 
 上面代码中，子类`B`的`__proto__`属性指向父类`A`，子类`B`的`prototype`属性的`__proto__`属性指向父类`A`的`prototype`属性。
 
+
+
+实现Storage，使得该对象为单例，并对localStorage进行封装设置值setItem\(key,value\)和getItem\(key\)
+
+```
+var instance = null;
+
+class Storage{
+ static getInstance() {
+  if(!instance) {
+      instance = new Storage();
+    }
+    return instance;
+  }
+
+  setItem = (key, value) => localStorage.setItem(key, value),
+  getItem = key => localStorage.getItem(key)
+
+}
+```
+
+
+
