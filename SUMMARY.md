@@ -22,6 +22,7 @@
   * [css技巧](cssxiang-guan/cssji-qiao.md)
   * [BFC深入理解](cssxiang-guan/bfcshen-ru-li-jie.md)
   * [一些兼容处理](cssxiang-guan/yi-xie-jian-rong-chu-li.md)
+  * [垂直居中](cssxiang-guan/chui-zhi-ju-zhong.md)
 * [安全相关](an-quan-xiang-guan.md)
   * [web安全](an-quan-xiang-guan/weban-quan.md)
 * linux
