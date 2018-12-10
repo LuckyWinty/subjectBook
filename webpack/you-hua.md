@@ -27,5 +27,7 @@ module: {
 loader: 'babel-loader?cacheDirectory=true'
 ```
 
+2、Happypack——将 loader 由单进程转为多进程
+
 
 
