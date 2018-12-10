@@ -67,11 +67,41 @@ plugins: [
 
 ```
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
- 
+
 module.exports = {
   plugins: [
     new BundleAnalyzerPlugin()
   ]
+}
+```
+
+4、删除冗余代码，Tree-Shaking。
+
+5、以UglifyJsPlugin 为例，在压缩过程中对碎片化的冗余代码（如 console 语句、注释等）进行自动化删除。
+
+```
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+module.exports = {
+ plugins: [
+   new UglifyJsPlugin({
+     // 允许并发
+     parallel: true,
+     // 开启缓存
+     cache: true,
+     compress: {
+       // 删除所有的console语句    
+       drop_console: true,
+       // 把使用多次的静态值自动定义为变量
+       reduce_vars: true,
+     },
+     output: {
+       // 不保留注释
+       comment: false,
+       // 使输出的代码尽可能紧凑
+       beautify: false
+     }
+   })
+ ]
 }
 ```
 
