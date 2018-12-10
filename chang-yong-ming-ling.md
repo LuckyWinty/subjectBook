@@ -16,3 +16,11 @@
 
 scp webadmin@192.168.200.48:/export/servers/nginx/conf/nginx.conf ~/JD/project/temp
 
+删除文件夹
+
+rm -rf /export/wxsq/node\_app/mpm/component
+
+删除文件
+
+rm -f /export/wxsq/node\_app/mpm/component/test.js
+
