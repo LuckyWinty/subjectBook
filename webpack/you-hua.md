@@ -111,3 +111,28 @@ webpack4 现在已经默认使用 uglifyjs-webpack-plugin 对代码做压缩了�
 
 6、按需加载，require.ensure
 
+
+
+
+
+**构建优化：**
+
+1、减少编译体积 ContextReplacementPugin、IgnorePlugin、babel-plugin-import、babel-plugin-transform-runtime
+
+2、并行编译 happypack、thread-loader、uglifyjsWebpackPlugin开启并行
+
+3、缓存 cache-loader、hard-source-webpack-plugin、uglifyjsWebpackPlugin开启缓存、babel-loader开启缓存
+
+4、预编译 dllWebpackPlugin && DllReferencePlugin、auto-dll-webapck-plugin
+
+  
+
+
+**性能优化：**
+
+1、减少编译体积 Tree-shaking、Scope Hositing
+
+2、hash缓存 webpack-md5-plugin
+
+3、拆包 splitChunksPlugin、import\(\)、require.ensure
+
