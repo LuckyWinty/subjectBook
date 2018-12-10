@@ -63,7 +63,17 @@ plugins: [
 }
 ```
 
-3、文件结构可视化，找出导致体积过大的原因
+3、文件结构可视化，找出导致体积过大的原因，使用包组成可视化工具webpack-bundle-analyzer
+
+```
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+ 
+module.exports = {
+  plugins: [
+    new BundleAnalyzerPlugin()
+  ]
+}
+```
 
 
 
