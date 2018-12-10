@@ -109,5 +109,5 @@ module.exports = {
 webpack4 现在已经默认使用 uglifyjs-webpack-plugin 对代码做压缩了——在 webpack4 中，我们是通过配置 optimization.minimize 与 optimization.minimizer 来自定义压缩相关的操作的。
 ```
 
-
+6、按需加载
 
