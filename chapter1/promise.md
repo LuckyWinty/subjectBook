@@ -11,3 +11,7 @@ Promise 必须为以下三种状态之一：等待态（Pending）、执行态�
 
 Promise里的关键是要保证，then方法传入的参数onFulfilled 和 onRejected，必须在then方法被调用的那一轮事件循环之后的新执行栈中执行。
 
+
+
+https://segmentfault.com/a/1190000013396601
+
