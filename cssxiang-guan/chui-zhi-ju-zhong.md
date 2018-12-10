@@ -2,7 +2,6 @@
 
 ```
 // 1
-
 .wraper {
   position: relative;
   .box {
@@ -17,7 +16,6 @@
 
 
 // 2
-
 .wraper {
   position: relative;
   .box {
@@ -30,7 +28,6 @@
 
 
 // 3
-
 .wraper {
   .box {
     display: flex;
@@ -42,7 +39,6 @@
 
 
 // 4
-
 .wraper {
   display: table;
   .box {
