@@ -57,8 +57,6 @@ process.on("uncaughtException", function(e) {
 
 7.跨域 crossOrigin 解决
 
-
-
 `window.onerror`是我们在做错误监控中用到比较多的方案。`window.onerror`包含了`try...catch`的优势，而`try...catch`无法捕获的语法错误和全局异常处理，`window.onerror`都可以做到。不过，由于是全局监测，就会统计到浏览器插件中的 js 异常。
 
 `window.onerror`还有一个问题就是浏览器跨域，页面和 js 代码在不同域上时，浏览器出于安全性的考虑，会将异常内容隐藏，我们只能获取到一个简单的`Script Error`信息。解决方案也很简单：
@@ -73,5 +71,7 @@ process.on("uncaughtException", function(e) {
 2. Generator 可以直接使用co 函数库来使用try...catch
 3. async 和 await 可以直接使用try...catch
 
+更多：
 
+http://jartto.wang/2018/11/20/js-exception-handling/
 
