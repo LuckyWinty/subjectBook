@@ -51,7 +51,7 @@ process.on("uncaughtException", function(e) {
 
 4.捕获没有 Catch 的 Promise 异常：unhandledrejection
 
-5.VUE errorHandler 和 React componentDidCatch
+5.VUE 全局捕获错误方法errorHandler和组件级错误捕获方法errorCaptured 和 React componentDidCatch
 
 6.监控网页崩溃：window 对象的 load 和 beforeunload
 
@@ -73,5 +73,5 @@ process.on("uncaughtException", function(e) {
 
 更多：
 
-http://jartto.wang/2018/11/20/js-exception-handling/
+[http://jartto.wang/2018/11/20/js-exception-handling/](http://jartto.wang/2018/11/20/js-exception-handling/)
 
