@@ -250,6 +250,8 @@ module.exports = {
 }
 ```
 
+参考资料：[https://segmentfault.com/a/1190000012936029\#articleHeader2](https://segmentfault.com/a/1190000012936029#articleHeader2)
+
 更多详细细节看文档：[http://eslint.cn/docs/user-guide](http://eslint.cn/docs/user-guide)
 
 ### production相关的一些配置
