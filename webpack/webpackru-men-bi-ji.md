@@ -48,5 +48,7 @@ webpack4 的`mode`给出了两种配置：`development`和`production`。生产�
     }
 ```
 
+然而babel-loader只转换语法，一些新增的api是无法转换的，还是会导致兼容性问题，我们就需要`babel-polyfill。`
 
+解决：
 
