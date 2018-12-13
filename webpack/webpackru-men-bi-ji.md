@@ -204,5 +204,26 @@ new UglifyJsPlugin({
 })
 ```
 
+2.提取公共模块
+
+```
+output: {
+    ...
+    chunkFilename: '[name].[chunkhash:8].js'
+},
+...
+optimization: {
+    splitChunks: {
+        cacheGroups: {
+            vendor: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'common',
+                chunks: 'all'
+            }
+        }
+    }
+}
+```
+
 
 
