@@ -110,7 +110,37 @@ babel-polyfill解决了Babel不转换新API的问题，但是直接在代码中�
     }
 ```
 
-3.处理html文件
+3.处理html文件，一般用[html-webpack-plugin](https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin)，参考代码：
+
+```
+    const HtmlWebPackPlugin = require("html-webpack-plugin");
+    module.exports = {
+        module: {
+            rules: [
+                // ...,
+                {
+                    test: /\.html$/,
+                    use: [{
+                        loader: "html-loader",
+                        options: {
+                            minimize: true
+                        }
+                    }]
+                }
+            ]
+        },
+        plugins: [
+            new HtmlWebPackPlugin({
+                template: "./src/index.html",
+                filename: "./index.html"
+            })
+        ]
+    };
+```
+
+
+
+
 
 
 
