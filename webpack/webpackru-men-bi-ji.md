@@ -32,7 +32,7 @@ webpack4 的`mode`给出了两种配置：`development`和`production`。生产�
 5. assets的处理：静态资源处理
 6. server的启用：development 模式下启动服务器并实时刷新
 7. source-map
-8. esLint
+8. eslint
 
 1.转换js，解决兼容性问题，用 babel 转换 ES6 代码，用 babel 转换 ES6 代码需要使用到**babel-loader**，我们需要安装一系列的依赖：
 
@@ -191,11 +191,66 @@ or
  devtool: "source-map" //打包后的未压缩文件
 ```
 
-8.配置esLint
+8.配置eslint
 
-要使webpack支持eslint，就要要安装`eslint-loader。`
+8.1要使webpack支持eslint，就要要安装`eslint-loader。`
 
+```
+{
+    test: /\.js$/,
+    loader: 'eslint-loader',
+    enforce: "pre",
+    include: [path.resolve(__dirname, 'src')], // 指定检查的目录
+    options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine 
+        formatter: require('eslint-friendly-formatter') // 指定错误报告的格式规范，formatter默认是stylish，如果想用第三方的要另外安装
+    }
+}
+```
 
+8.2安装eslint，创建配置文件 '.eslintrc.js'
+
+```
+module.exports = {
+    root: true, 
+    'plugins': [
+        'html'
+    ],
+    'settings': {
+        'html/html-extensions': ['.wxml']
+    },
+    'rules': {
+        'no-restricted-globals': ['error', 'Promise'],  // 禁止直接使用原生Promise，必须引入lib
+        'newline-per-chained-call': 'off',
+        'eqeqeq': 'off',
+        'indent': ['error', 4, { SwitchCase: 1 }],
+        'prefer-rest-params': 'off',
+        'prefer-template': 'off',
+        'no-else-return': 'off',
+        'no-nested-ternary': 'off',
+        'brace-style': 'off',
+        'semi': 'off',
+        'camelcase': ['off', { properties: 'never' }],  // ESLint 配置问题，暂时不强制所有变量名都用驼峰式命名
+        'array-callback-return': 'off',  // 暂时关闭
+        'prefer-const': 'warn',
+        'no-mixed-operators': 'off',
+        'callback-return': 'warn',
+        'class-methods-use-this': 'warn',
+
+        // 不能直接使用以下 api，如果修改该 api 的封装库，可以在代码加上以下注释忽略检查：
+        // /* eslint-disable no-restricted-properties */
+        // [your code]
+        // /* eslint-enable no-restricted-properties */
+
+        'no-restricted-properties': [2, {
+            'object': 'wx',
+            'property': 'navigateTo',
+            'message': 'Please use this.$goto!!!'
+        }]
+    }
+}
+```
+
+更多详细细节看文档：[http://eslint.cn/docs/user-guide](http://eslint.cn/docs/user-guide)
 
 ### production相关的一些配置
 
