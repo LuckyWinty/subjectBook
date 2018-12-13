@@ -140,7 +140,46 @@ babel-polyfill解决了Babel不转换新API的问题，但是直接在代码中�
 
 更多配置解释，参考[https://segmentfault.com/a/1190000007294861](https://segmentfault.com/a/1190000007294861)
 
-4.
+4.清理
+
+每次打包，都会生成项目的静态资源，随着某些文件的增删，我们的 dist 目录下可能产生一些不再使用的静态资源，webpack并不会自动判断哪些是需要的资源，为了不让这些旧文件也部署到生产环境上占用空间，所以在 webpack 打包前最好能清理 dist 目录。
+
+```
+  const CleanWebpackPlugin = require('clean-webpack-plugin');
+  module.exports = {
+    plugins: [
+      new CleanWebpackPlugin(['dist']),
+    ]
+  };
+```
+
+5.资源处理
+
+```
+{
+    test: /\.html$/,
+    loader: 'art-template-loader',
+}, {
+    test: /\.jpg$/,
+    loader: 'url-loader?mimetype=image/jpg'
+}, {
+    test: /\.png$/,
+    loader: 'url-loader?mimetype=image/png'
+},
+{
+    test: /\.svg/,
+    loader: 'url-loader?mimetype=image/svg+xml'
+}
+```
+
+6.server的启用
+
+```
+    "scripts": {
+      "start": "webpack-dev-server --mode development --open",
+      "build": "webpack --mode production"
+    }
+```
 
 
 
