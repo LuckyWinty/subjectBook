@@ -181,6 +181,14 @@ babel-polyfill解决了Babel不转换新API的问题，但是直接在代码中�
     }
 ```
 
+7.开启source-map
+
+```
+ devtool: "inline-source-map" //详细到打包前的每个没被压缩的文件
+or
+ devtool: "source-map" //打包后的未压缩文件
+```
+
 ### production相关的一些配置
 
 1、代码压缩，uglifyjs-webpack-plugin
