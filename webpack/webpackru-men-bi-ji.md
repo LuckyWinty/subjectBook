@@ -8,5 +8,5 @@ Webpack和另外两个并没有太多的可比性，Gulp/Grunt是一种能够优
 
 ### 开始使用
 
-
+安装webpack，目前webpack已更新到4.x版本，且大力度宣传的是 cli 方式启动，更推崇的是让开发者使用高度封装的 cli。基于此，我们应该安装`webpack^4.1.1、webpack-cli^2.0.10、webpack-dev-server^3.1.0`，以及创建一个公共配置文件`webpack.config.js。`
 
