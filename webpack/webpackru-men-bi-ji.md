@@ -64,3 +64,20 @@ babel-polyfill解决了Babel不转换新API的问题，但是直接在代码中�
 
 因此，babel-runtime适合在组件，类库项目中使用，而babel-polyfill适合在业务项目中使用。
 
+**babel-runtime版本搭配注意：**
+
+```
+//安装babel-runtime和babel-plugin-transform-runtime，配置如下：
+{
+"plugins": [
+        "transform-runtime"
+    ]
+}
+//高版本的babel，安装@babel/plugin-transform-runtime、@babel/runtime
+{
+"plugins": ["@babel/transform-runtime"]
+}
+```
+
+
+
