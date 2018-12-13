@@ -48,7 +48,13 @@ webpack4 的`mode`给出了两种配置：`development`和`production`。生产�
     }
 ```
 
-然而babel-loader只转换语法，一些新增的api是无法转换的，还是会导致兼容性问题，我们就需要`babel-polyfill。`
+Babel默认只转换新的JavaScript语法，而不转换新的API。 例如，Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise 等全局对象，以及一些定义在全局对象上的方法（比如 Object.assign）都不会转译。 如果想使用这些新的对象和方法，则需要为当前环境提供一个polyfill。
 
-解决：
+解决方案一：
+
+引入babel-polyfill，它会”加载整个polyfill库”，针对编译的代码中新的API进行处理，并且在代码中插入一些帮助函数。
+
+解决方案二：
+
+babel-runtime
 
