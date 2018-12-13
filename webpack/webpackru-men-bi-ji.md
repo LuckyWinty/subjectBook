@@ -81,7 +81,7 @@ babel-polyfill解决了Babel不转换新API的问题，但是直接在代码中�
 
 2.转换css
 
-相关的loder：less-loader、[postcss-loader](https://webpack.js.org/loaders/postcss-loader/)等。利用[mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)来打包到一个文件里面。参考代码：
+相关的loder：less-loader、[postcss-loader](https://webpack.js.org/loaders/postcss-loader/)、css-loader、style-loader等。利用[mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)来打包到一个文件里面。参考代码：
 
 ```
     const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -180,6 +180,10 @@ babel-polyfill解决了Babel不转换新API的问题，但是直接在代码中�
       "build": "webpack --mode production"
     }
 ```
+
+### production相关的一些配置
+
+1、代码压缩，uglifyjs-webpack-plugin
 
 
 
