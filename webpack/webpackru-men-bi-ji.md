@@ -10,3 +10,9 @@ Webpack和另外两个并没有太多的可比性，Gulp/Grunt是一种能够优
 
 安装webpack，目前webpack已更新到4.x版本，且大力度宣传的是 cli 方式启动，更推崇的是让开发者使用高度封装的 cli。基于此，我们应该安装`webpack^4.1.1、webpack-cli^2.0.10`\(想要执行webpack的命令必须有这个包\)`、webpack-dev-server^3.1.0`，以及创建一个公共配置文件`webpack.config.js。`
 
+### webpack的mode
+
+webpack4 的`mode`给出了两种配置：`development`和`production`。生产模式下，启用了 代码压缩、作用域提升（scope hoisting）、 tree-shaking，使代码最精简；开发模式下，相较于更小体积的代码，提供的是打包速度上的优化。
+
+
+
