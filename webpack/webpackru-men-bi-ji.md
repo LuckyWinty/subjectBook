@@ -31,6 +31,8 @@ webpack4 的`mode`给出了两种配置：`development`和`production`。生产�
 4. dist的清理：打包前清理源目录文件
 5. assets的处理：静态资源处理
 6. server的启用：development 模式下启动服务器并实时刷新
+7. source-map
+8. esLint
 
 1.转换js，解决兼容性问题，用 babel 转换 ES6 代码，用 babel 转换 ES6 代码需要使用到**babel-loader**，我们需要安装一系列的依赖：
 
@@ -189,6 +191,12 @@ or
  devtool: "source-map" //打包后的未压缩文件
 ```
 
+8.配置esLint
+
+要使webpack支持eslint，就要要安装`eslint-loader。`
+
+
+
 ### production相关的一些配置
 
 1、代码压缩，uglifyjs-webpack-plugin
@@ -225,7 +233,5 @@ optimization: {
 }
 ```
 
-详细参考：https://www.cnblogs.com/ufex/p/8758792.html
-
-
+详细参考：[https://www.cnblogs.com/ufex/p/8758792.html](https://www.cnblogs.com/ufex/p/8758792.html)
 
