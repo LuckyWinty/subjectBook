@@ -58,3 +58,9 @@ Babel默认只转换新的JavaScript语法，而不转换新的API。 例如，I
 
 babel-runtime
 
+两种方案区别：
+
+babel-polyfill解决了Babel不转换新API的问题，但是直接在代码中插入帮助函数，会导致污染了全局环境，并且不同的代码文件中包含重复的代码，导致编译后的代码体积变大。babel-runtime配置了之后，打包时会“按需加载”，当用到某个polifill时再引入对应的垫子，这样可以减少体积。但在某些情况下仍然不能被babel-runtime替代， 例如，代码：\[1, 2, 3\].includes\(3\)，Object.assign\({}, {key: 'value'}\)，Array，Object以及其他”实例”下es6的方法，babel-runtime是无法支持的， 因为babel-runtime只支持到static的方法。
+
+因此，babel-runtime适合在组件，类库项目中使用，而babel-polyfill适合在业务项目中使用。
+
