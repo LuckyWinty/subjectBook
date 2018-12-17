@@ -31,23 +31,10 @@ Nginx是一个web服务器和反向代理服务器，用于`HTTP`、`HTTPS`、`S
 ```
 Server
  {
-
-
-listen
-80
-;
-
-
-server_name
- “ “ ;
-
-
-return
-444
-;
-
+   listen 80;
+   server_name “ “ ;
+   return 444;
 }
-
 ```
 
 这里，服务器名被保留为一个空字符串，它将在没有“主机”头字段的情况下匹配请求，而一个特殊的`Nginx`的非标准代码`444`被返回，从而终止连接。
@@ -75,7 +62,6 @@ Like server {
 listen
 81
 ; }
-
 ```
 
 ## 10、请解释是否有可能将`Nginx`的错误替换为`502`错误、`503`? {#articleHeader9}
@@ -113,7 +99,6 @@ error_page
 #…
 
 }
-
 ```
 
 ## 11、在`Nginx`中，解释如何在`URL`中保留双斜线? {#articleHeader10}
