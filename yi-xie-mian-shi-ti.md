@@ -59,9 +59,8 @@ Server
 
 ```
 Like server { 
-listen
-81
-; }
+ listen 8;
+}
 ```
 
 ## 10、请解释是否有可能将`Nginx`的错误替换为`502`错误、`503`? {#articleHeader9}
