@@ -12,9 +12,15 @@
 
 css画特殊图形
 
-三角形：
+扇形：
 
-
+```
+    width: 0;
+    height: 0;
+    border: solid 100px red;
+    border-color: red transparent transparent transparent;
+    border-radius: 100px;
+```
 
 
 
