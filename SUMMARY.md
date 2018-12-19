@@ -33,6 +33,7 @@
   * [DNS解析](dnsjie-xi.md)
   * [ HTTP 与 HTTPS ](xiang-xi-jie-xi-http-yu-https-de-qu-bie.md)
   * [http2](http2.md)
+  * [常见的HTTP状态码](chang-jian-de-http-zhuang-tai-ma.md)
 * [性能优化](xing-neng-you-hua.md)
   * [图片](xing-neng-you-hua/tu-pian.md)
     * [图片格式](tu-pian-ge-shi.md)
