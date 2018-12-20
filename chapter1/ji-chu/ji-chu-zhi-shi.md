@@ -11,3 +11,5 @@ console.log('hello world' instanceof PrimitiveString) // true
 
 `Symbol.hasInstance`，其实就是一个能让我们自定义`instanceof`行为的东西，以上代码等同于`typeof 'hello world' === 'string'`，所以结果自然是`true`了。这其实也侧面反映了一个问题，`instanceof`也不是百分之百可信的。
 
+![](/assets/basic.png)
+
