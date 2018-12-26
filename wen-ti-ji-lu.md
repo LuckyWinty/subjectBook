@@ -32,5 +32,5 @@
 
 8、输入url之后发生了什么
 
-9、
+9、http、http2、https
 
