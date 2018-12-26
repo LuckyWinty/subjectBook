@@ -34,3 +34,5 @@
 
 9、http、http2、https
 
+10、bind方法的实现
+
