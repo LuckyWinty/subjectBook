@@ -78,7 +78,12 @@
     padding: calc((100% - 100px) / 2);
     background-clip: content-box;
 }
-
+//7、margin:auto实现绝对定位元素的居中
+.element {
+    width: 600px; height: 400px;
+    position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+    margin: auto;    /* 有了这个就自动居中了 */
+}
 ```
 
 
