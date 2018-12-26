@@ -61,6 +61,24 @@
 .child {
   font-size: 30px;
 }
+//6、块级元素：calc()
+.parent {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    position: relative;
+}
+.child {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    padding: -webkit-calc((100% - 100px) / 2);
+    padding: -moz-calc((100% - 100px) / 2);
+    padding: -ms-calc((100% - 100px) / 2);
+    padding: calc((100% - 100px) / 2);
+    background-clip: content-box;
+}
+
 ```
 
 
