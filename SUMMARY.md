@@ -19,6 +19,7 @@
     * [函数柯里化](chapter1/han-shu-ke-li-hua.md)
   * [基础](chapter1/ji-chu.md)
     * [基础知识](chapter1/ji-chu/ji-chu-zhi-shi.md)
+  * [Promise](chapter1/promise.md)
 * [css相关](cssxiang-guan.md)
   * [布局](cssxiang-guan/bu-ju.md)
   * [css技巧](cssxiang-guan/cssji-qiao.md)
