@@ -13,12 +13,12 @@
     * [webpack](chapter1/kuang-jia/webpack.md)
   * [ES6/7/8](chapter1/es678.md)
     * [基础](chapter1/ji-chu.md)
-    * [Promise](chapter1/promise.md)
   * 其他
     * [模块化](chapter1/yin-qing-xiang-guan.md)
     * [函数柯里化](chapter1/han-shu-ke-li-hua.md)
   * [基础](chapter1/ji-chu.md)
     * [基础知识](chapter1/ji-chu/ji-chu-zhi-shi.md)
+    * [script标签的defer和async](chapter1/ji-chu/scriptbiao-qian-de-defer-he-async.md)
   * [Promise](chapter1/promise.md)
 * [css相关](cssxiang-guan.md)
   * [布局](cssxiang-guan/bu-ju.md)
