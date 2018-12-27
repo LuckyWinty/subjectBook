@@ -20,6 +20,7 @@
     * [基础知识](chapter1/ji-chu/ji-chu-zhi-shi.md)
     * [script标签的defer和async](chapter1/ji-chu/scriptbiao-qian-de-defer-he-async.md)
   * [Promise](chapter1/promise.md)
+  * [call和apply和bind实现](chapter1/callhe-apply-he-bind-shi-xian.md)
 * [css相关](cssxiang-guan.md)
   * [布局](cssxiang-guan/bu-ju.md)
   * [css技巧](cssxiang-guan/cssji-qiao.md)
