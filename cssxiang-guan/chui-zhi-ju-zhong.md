@@ -90,7 +90,13 @@
 
 margin概念：
 
-margin属性为给定元素设置所有四个（上下左右）方向的外边距属性。这是四个外边距属性设置的简写。四个外边距属性设置分别是： [`margin-top`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-top)，[`margin-right`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-right)，[`margin-bottom`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-bottom)和[`margin-left`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-left)。指定的外边距允许为负数。
+margin属性为给定元素设置所有四个（上下左右）方向的外边距属性。这是四个外边距属性设置的简写。四个外边距属性设置分别是： [`margin-top`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-top)，[`margin-right`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-right)，[`margin-bottom`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-bottom)和[`margin-left`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-left)。指定的外边距允许为负数。
 
 margin的top和bottom属性对非替换内联元素无效，例如[`<span>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/span)和 [`<code>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/code)。
+
+**流体特性**
+
+块状水平元素，如`div`元素（下同），在默认情况下（非浮动、绝对定位等），水平方向会自动填满外部的容器；如果有`margin-left/margin-right`,`padding-left/padding-right`,`border-left-width/border-right-width`等，实际内容区域会响应变窄。
+
+当一个绝对定位元素，其对立定位方向属性同时有具体定位数值的时候，流体特性就发生了。
 
