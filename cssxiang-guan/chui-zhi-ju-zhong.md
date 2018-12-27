@@ -98,5 +98,9 @@ margin的top和bottom属性对非替换内联元素无效，例如[`<span>`](htt
 
 块状水平元素，如`div`元素（下同），在默认情况下（非浮动、绝对定位等），水平方向会自动填满外部的容器；如果有`margin-left/margin-right`,`padding-left/padding-right`,`border-left-width/border-right-width`等，实际内容区域会响应变窄。
 
-当一个绝对定位元素，其对立定位方向属性同时有具体定位数值的时候，流体特性就发生了。
+当一个绝对定位元素，其对立定位方向属性同时有具体定位数值的时候，流体特性就发生了。具有流体特性绝对定位元素的`margin:auto`的填充规则和普通流体元素一模一样。
+
+
+
+
 
