@@ -88,7 +88,9 @@
 
 #### margin:auto实现垂直居中，居中的原因分析
 
+margin概念：
 
+margin属性为给定元素设置所有四个（上下左右）方向的外边距属性。这是四个外边距属性设置的简写。四个外边距属性设置分别是： [`margin-top`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-top)，[`margin-right`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-right)，[`margin-bottom`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-bottom)和[`margin-left`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin-left)。指定的外边距允许为负数。
 
-
+margin的top和bottom属性对非替换内联元素无效，例如[`<span>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/span)和 [`<code>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/code)。
 
