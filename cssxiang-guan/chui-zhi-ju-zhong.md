@@ -85,14 +85,22 @@
     margin: auto;    /* 有了这个就自动居中了 */
 }
 //8、
-父元素: {
+.parent{
     display: flex;
 }
-子元素: {
-    flex: 0 0 auto;
-    margin: auto;
-}
-
+.parent{
+          display: flex;
+          width: 500px;
+          height: 500px;
+          background-color: pink;
+      }
+      .child{
+          flex: 0 0 auto;
+          margin: auto;
+          width: 100px;
+          height: 100px;
+          background-color: red;
+    }
 ```
 
 #### margin:auto实现垂直居中，居中的原因分析
