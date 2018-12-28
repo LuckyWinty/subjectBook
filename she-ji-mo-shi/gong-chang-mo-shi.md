@@ -72,5 +72,9 @@ let admin = UserFactory('Admin')
 let normalUser = UserFactory('NormalUser')
 ```
 
+### 1.3 抽象工厂模式
+
+上面介绍了简单工厂模式和工厂方法模式都是直接生成实例，但是抽象工厂模式不同，抽象工厂模式并不直接生成实例， 而是用于对产品类簇的创建.
+
 
 
