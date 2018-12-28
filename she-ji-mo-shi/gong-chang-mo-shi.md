@@ -143,5 +143,5 @@ let qqUser = new QqUserClass('QQ小李');
 let weiboUser = new WeiboUserClass('微博小李');
 ```
 
-
+详细：https://zhuanlan.zhihu.com/p/35323562
 
