@@ -40,3 +40,37 @@ let normalUser = UserFactory('user')
 
 工厂方法模式的本意是将实际创建对象的工作推迟到子类中，这样核心类就变成了抽象类。但是在JavaScript中很难像传统面向对象那样去实现创建抽象类。所以在JavaScript中我们只需要参考它的核心思想即可。我们可以将工厂方法看作是一个实例化对象的工厂类。
 
+```
+let UserFactory = function(role) {
+  if(this instanceof UserFactory) {
+    var s = new this[role]();
+    return s;
+  } else {
+    return new UserFactory(role);
+  }
+}
+
+//工厂方法函数的原型中设置所有对象的构造函数
+UserFactory.prototype = {
+  SuperAdmin: function() {
+    this.name = "超级管理员",
+    this.viewPage = ['首页', '通讯录', '发现页', '应用数据', '权限管理']
+  },
+  Admin: function() {
+    this.name = "管理员",
+    this.viewPage = ['首页', '通讯录', '发现页', '应用数据']
+  },
+  NormalUser: function() {
+    this.name = '普通用户',
+    this.viewPage = ['首页', '通讯录', '发现页']
+  }
+}
+
+//调用
+let superAdmin = UserFactory('SuperAdmin');
+let admin = UserFactory('Admin') 
+let normalUser = UserFactory('NormalUser')
+```
+
+
+
