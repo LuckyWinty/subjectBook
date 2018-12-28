@@ -12,5 +12,12 @@ new操作符
 
 3、新创建的对象由 this 所引用，并且最后隐式的返回 this.
 
+```
+var obj  = {};
+obj.__proto__ = F.prototype;
+F.call(obj);
+
+```
+
 
 
