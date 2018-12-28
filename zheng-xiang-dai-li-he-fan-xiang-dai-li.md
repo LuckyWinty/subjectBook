@@ -13,15 +13,17 @@
 
 正向代理的典型用途是为在防火墙内的局域网客户端提供访问Internet的途径。正向代理还可以使用缓冲特性减少网络使用率。反向代理的典型用途是将 防火墙后面的服务器提供给Internet用户访问。反向代理还可以为后端的多台服务器提供负载平衡，或为后端较慢的服务器提供缓冲服务。
 
-#####  正向代理
+##### 正向代理
 
-  从上面的介绍也就可以猜出来正向代理的至少一个功能（俗称翻墙），也即：
+从上面的介绍也就可以猜出来正向代理的至少一个功能（俗称翻墙），也即：
 
-  用户A无法访问facebook，但是能访问服务器B，而服务器B可以访问facebook。于是用户A访问服务器B，通过服务器B去访问facebook，，服务器B收到请求后，去访问facebook，facebook把响应信息返回给服务器B，服务器B再把响应信息返回给A。这样，通过代理服务器B，就实现了翻墙。
+用户A无法访问facebook，但是能访问服务器B，而服务器B可以访问facebook。于是用户A访问服务器B，通过服务器B去访问facebook，，服务器B收到请求后，去访问facebook，facebook把响应信息返回给服务器B，服务器B再把响应信息返回给A。这样，通过代理服务器B，就实现了翻墙。
 
 ##### 反向代理
 
-  从上面的介绍也可以猜出来反向代理的至少一个功能（比如负载均衡），也即：
+从上面的介绍也可以猜出来反向代理的至少一个功能（比如负载均衡），也即：
 
-  假设用户A访问 [**http://www.somesite.com/something.html**](https://link.jianshu.com?t=http://www.somesite.com/something.html)，但[www.somesite.com](https://link.jianshu.com?t=http://www.somesite.com)上并不存在something.html页面，于是接收用户请求的该服务器就偷偷从另外一台服务器上取回来，然后返回给用户，而用户并不知道something.html页面究竟位于哪台机器上。
+假设用户A访问 [**http://www.somesite.com/something.html**](https://link.jianshu.com?t=http://www.somesite.com/something.html)，但[www.somesite.com](https://link.jianshu.com?t=http://www.somesite.com)上并不存在something.html页面，于是接收用户请求的该服务器就偷偷从另外一台服务器上取回来，然后返回给用户，而用户并不知道something.html页面究竟位于哪台机器上。
+
+更多：https://www.jianshu.com/p/208c02c9dd1d
 
