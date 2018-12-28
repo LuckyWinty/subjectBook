@@ -67,4 +67,6 @@
 * [计算机网络](ji-suan-ji-wang-luo.md)
   * [七层协议](ji-suan-ji-wang-luo/qi-ceng-xie-yi.md)
   * [TCP/UDP](ji-suan-ji-wang-luo/tcpip.md)
+* [设计模式](she-ji-mo-shi.md)
+  * [工厂模式](she-ji-mo-shi/gong-chang-mo-shi.md)
 
