@@ -47,6 +47,7 @@
   * [浏览器](xing-neng-you-hua/liu-lan-qi.md)
     * [浏览器渲染过程](xing-neng-you-hua/liu-lan-qi/liu-lan-qi-xuan-ran-guo-cheng.md)
   * [项目中常用的性能优化手段](xing-neng-you-hua/xiang-mu-zhong-chang-yong-de-xing-neng-you-hua-shou-duan.md)
+  * [监控网页的卡顿和奔溃](xing-neng-you-hua/ru-he-jian-kong-wang-ye-de-qia-dun.md)
 * [node](node.md)
   * [内存泄漏记录](node/nei-cun-xie-lou-ji-lu.md)
   * [v8GC](node/v8gc.md)
