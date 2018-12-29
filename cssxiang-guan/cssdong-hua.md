@@ -38,7 +38,6 @@ transition的优点在于简单易用，但是它有几个很大的局限。
 animation的主要api有
 
 ```
-
 div:hover {
   animation-name: rainbow;
   animation-duration: 1s;
@@ -47,6 +46,16 @@ div:hover {
   animation-fill-mode:forwards;
   animation-direction: normal;
   animation-iteration-count: 3;
+}
+```
+
+keyframes的写法
+
+```
+@keyframes rainbow {
+  0% { background: #c00 }
+  50% { background: orange }
+  100% { background: yellowgreen }
 }
 ```
 
