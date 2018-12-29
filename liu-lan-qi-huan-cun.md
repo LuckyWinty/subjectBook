@@ -65,7 +65,7 @@ Etag 的生成过程需要服务器额外付出开销，会影响服务端的性
 
 ![](/assets/webcache.png)
 
-更多：[https://juejin.im/book/5b936540f265da0a9624b04b/section/5b9ba651f265da0ac726e5de\(小册：\[前端性能优化原理与实践\]\(https://juejin.im/book/5b936540f265da0a9624b04b\)\](https://juejin.im/book/5b936540f265da0a9624b04b/section/5b9ba651f265da0ac726e5de%28小册：[前端性能优化原理与实践]%28https://juejin.im/book/5b936540f265da0a9624b04b%29\)\)
+更多：[https://juejin.im/book/5b936540f265da0a9624b04b/section/5b9ba651f265da0ac726e5de\(小册：\[前端性能优化原理与实践\]\(https://juejin.im/book/5b936540f265da0a9624b04b\)\](https://juejin.im/book/5b936540f265da0a9624b04b/section/5b9ba651f265da0ac726e5de%28小册：[前端性能优化原理与实践]%28https://juejin.im/book/5b936540f265da0a9624b04b%29%29\)
 
 **ETag**
 
@@ -93,8 +93,6 @@ ETag值的变更说明资源状态已经被修改。往往可以通过时间戳�
 
 更多：[https://www.cnblogs.com/tyb1222/archive/2011/12/24/2300246.html](https://www.cnblogs.com/tyb1222/archive/2011/12/24/2300246.html)
 
-
-
 ## Service Worker Cache
 
 Service Worker 是一种独立于主线程之外的 Javascript 线程。它脱离于浏览器窗体，因此无法直接访问 DOM。这样独立的个性使得 Service Worker 的“个人行为”无法干扰页面的性能，这个“幕后工作者”可以帮我们实现离线缓存、消息推送和网络代理等功能。我们借助 Service worker 实现的离线缓存就称为 Service Worker Cache。
@@ -105,7 +103,15 @@ Service Worker 的生命周期包括 install、active、working 三个阶段。�
 
 MemoryCache，是指存在内存中的缓存。从优先级上来说，它是浏览器最先尝试去命中的一种缓存。从效率上来说，它是响应速度最快的一种缓存。
 
-内存缓存是快的，也是“短命”的。它和渲染进程“生死相依”，当进程结束后，也就是 tab 关闭以后，内存里的数据也将不复存在
+内存缓存是快的，也是“短命”的。它和渲染进程“生死相依”，当进程结束后，也就是 tab 关闭以后，内存里的数据也将不复存在。
+
+## Push Cache
+
+Push Cache 是指 HTTP2 在 server push 阶段存在的缓存。这块的知识比较新，应用也还处于萌芽阶段，我找了好几个网站也没找到一个合适的案例来给大家做具体的介绍。但应用范围有限不代表不重要——HTTP2 是趋势、是未来。在它还未被推而广之的此时此刻，我仍希望大家能对 Push Cache 的关键特性有所了解：
+
+* Push Cache 是缓存的最后一道防线。浏览器只有在 Memory Cache、HTTP Cache 和 Service Worker Cache 均未命中的情况下才会去询问 Push Cache。
+* Push Cache 是一种存在于会话阶段的缓存，当 session 终止时，缓存也随之释放。
+* 不同的页面只要共享了同一个 HTTP2 连接，那么它们就可以共享同一个 Push Cache。
 
 
 
