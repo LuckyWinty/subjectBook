@@ -59,5 +59,7 @@ keyframes的写法
 }
 ```
 
+另外一点需要注意的是，浏览器从一个状态向另一个状态过渡，是平滑过渡。steps函数可以实现分步过渡。
 
+steps讲解：https://www.zhangxinxu.com/wordpress/2018/06/css3-animation-steps-step-start-end/
 
