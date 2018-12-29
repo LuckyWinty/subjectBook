@@ -43,5 +43,12 @@ var loop = function(time) {
 
 基于以上几点，我们可以实现一种基于**心跳检测**的监控方案：
 
+* p1：网页加载后，通过**postMessage**API 每**5s**给 sw 发送一个心跳，表示自己的在线，sw 将在线的网页登记下来，更新登记时间；
+* p2：网页在**beforeunload**时，通过**postMessage**API 告知自己已经正常关闭，sw 将登记的网页清除；
+* p3：如果网页在运行的过程中 crash 了，sw 中的**running**状态将不会被清除，更新时间停留在奔溃前的最后一次心跳；
+* sw：Service Worker 每**10s**查看一遍登记中的网页，发现登记时间已经超出了一定时间（比如 15s）即可判定该网页 crash 了。
+
+更多：https://zhuanlan.zhihu.com/p/40273861
+
 
 
