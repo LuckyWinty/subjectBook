@@ -65,7 +65,7 @@ Etag 的生成过程需要服务器额外付出开销，会影响服务端的性
 
 ![](/assets/webcache.png)
 
-更多：https://juejin.im/book/5b936540f265da0a9624b04b/section/5b9ba651f265da0ac726e5de\(小册：[前端性能优化原理与实践](https://juejin.im/book/5b936540f265da0a9624b04b)\)
+更多：[https://juejin.im/book/5b936540f265da0a9624b04b/section/5b9ba651f265da0ac726e5de\(小册：\[前端性能优化原理与实践\]\(https://juejin.im/book/5b936540f265da0a9624b04b\)\](https://juejin.im/book/5b936540f265da0a9624b04b/section/5b9ba651f265da0ac726e5de%28小册：[前端性能优化原理与实践]%28https://juejin.im/book/5b936540f265da0a9624b04b%29\)\)
 
 **ETag**
 
@@ -92,4 +92,20 @@ ETag值的变更说明资源状态已经被修改。往往可以通过时间戳�
 将ETag值返回给客户端。计算ETag值开销最大的一般是计算采用哈希算法获取资源的表述值。
 
 更多：[https://www.cnblogs.com/tyb1222/archive/2011/12/24/2300246.html](https://www.cnblogs.com/tyb1222/archive/2011/12/24/2300246.html)
+
+
+
+## Service Worker Cache
+
+Service Worker 是一种独立于主线程之外的 Javascript 线程。它脱离于浏览器窗体，因此无法直接访问 DOM。这样独立的个性使得 Service Worker 的“个人行为”无法干扰页面的性能，这个“幕后工作者”可以帮我们实现离线缓存、消息推送和网络代理等功能。我们借助 Service worker 实现的离线缓存就称为 Service Worker Cache。
+
+Service Worker 的生命周期包括 install、active、working 三个阶段。一旦 Service Worker 被 install，它将始终存在，只会在 active 与 working 之间切换，除非我们主动终止它。这是它可以用来实现离线存储的重要先决条件。
+
+## MemoryCache
+
+MemoryCache，是指存在内存中的缓存。从优先级上来说，它是浏览器最先尝试去命中的一种缓存。从效率上来说，它是响应速度最快的一种缓存。
+
+内存缓存是快的，也是“短命”的。它和渲染进程“生死相依”，当进程结束后，也就是 tab 关闭以后，内存里的数据也将不复存在
+
+
 
