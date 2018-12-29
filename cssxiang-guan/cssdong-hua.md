@@ -18,5 +18,14 @@
    > 除了`ease`、`linear`、`cubic-bezier`之类的过渡函数都会为其插入补间。  
    > 有些效果不需要补间，只需要关键帧之间的跳跃，这时应该使用`steps`过渡方式。
 
+transition的主要api有
+
+```
+    transition-property: height;
+    transition-duration: 1s;
+    transition-delay: 1s;
+    transition-timing-function: ease;
+```
+
 
 
