@@ -9,6 +9,7 @@
   * 缓存
     * [浏览器缓存](chapter1/liu-lan-qi-huan-cun.md)
     * [CDN的缓存与回源机制](chapter1/cdnde-huan-cun-yu-hui-yuan-ji-zhi.md)
+    * [manifest](chapter1/manefest.md)
   * [框架](chapter1/kuang-jia.md)
     * [webpack](chapter1/kuang-jia/webpack.md)
     * [vue](chapter1/kuang-jia/vue.md)
