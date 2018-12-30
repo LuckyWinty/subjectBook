@@ -29,6 +29,13 @@ process.on("uncaughtException", function(e) {
 
 3、try...catch（无法捕捉异步回调里的异常）
 
+### 错误分类
+
+* 可预见的还是不可避免的，是操作错误还是bug。
+* 操作错误：函数参数类型错误、缺少参数、参数无效等
+
+* 数据错误、接口错误、接口超时等
+
 ## 浏览器端`window.onerror`
 
 可以做的异常处理：
