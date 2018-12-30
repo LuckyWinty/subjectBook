@@ -68,3 +68,7 @@ window.applicationCache.update();
 
 7、当manifest文件发生改变时，资源请求本身也会触发更新。
 
+
+
+manifest坑太多，已经不建议使用。目前，可以用service worker来作为代替方案。
+
