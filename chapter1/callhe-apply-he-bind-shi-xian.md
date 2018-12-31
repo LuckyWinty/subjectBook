@@ -119,5 +119,5 @@ Function.prototype.myBind = function (context) {
 }
 ```
 
-
+详细解读：https://github.com/jawil/blog/issues/16
 
