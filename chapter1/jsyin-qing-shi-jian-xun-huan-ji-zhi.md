@@ -34,6 +34,44 @@ JavaScrip中队列数据结构
 
 2、整体代码执行完毕后，第一个宏任务script执行完毕之后，就开始执行所有的可执行的微任务。
 
+含有async/await的情况
+
+```
+console.log('script start')
+
+async function async1() {
+  await async2()
+  console.log('async1 end')
+}
+async function async2() {
+  console.log('async2 end')
+}
+async1()
+
+setTimeout(function() {
+  console.log('setTimeout')
+}, 0)
+
+new Promise(resolve => {
+  console.log('Promise')
+  resolve()
+})
+  .then(function() {
+    console.log('promise1')
+  })
+  .then(function() {
+    console.log('promise2')
+  })
+
+console.log('script end')
+// script start => async2 end => Promise => script end => promise1 => promise2 => async1 end => setTimeout
+```
+
+思路基本一致，需要注意：
+
+* 如果await 后面直接跟的为一个变量，比如：await 1；这种情况的话相当于直接把await后面的代码注册为一个微任务，可以简单理解为promise.then\(await 下面的代码\)。然后跳出async函数，执行其他代码，当遇到promise函数的时候，会注册promise.then\(\)函数到微任务队列，注意此时微任务队列里面已经存在await后面的微任务。所以这种情况会先执行await后面的代码（async end），再执行async函数后面注册的微任务代码\(promise1,promise2\)。 
+* 如果await后面跟的是一个异步函数的调用，就是作者举得那个例子的形式，此时执行完awit并不先把await后面的代码注册到微任务队列中去，而是执行完await之后，直接跳出async函数，执行其他代码。然后遇到promise的时候，吧promise.then注册为微任务。其他代码执行完毕后，需要回到async函数去执行剩下的代码，然后把await后面的代码注册到微任务队列当中，注意此时微任务队列中是有一个之前注册的微任务的。所以这种情况会先执行async函数之外的微任务\(promise1,promise2\)，然后才执行async内注册的微任务\(async end\)
+
 ## Node 中的 Event Loop
 
 Node 中的 Event Loop 和浏览器中的是完全不相同的东西。
@@ -83,6 +121,4 @@ check 阶段执行`setImmediate`
 ### close callbacks
 
 close callbacks 阶段执行 close 事件
-
-
 
