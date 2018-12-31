@@ -1,4 +1,4 @@
-**call**
+简版**call**
 
 ```
 Function.prototype.myCall = function(context) {
