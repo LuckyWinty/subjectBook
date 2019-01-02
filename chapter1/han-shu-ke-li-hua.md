@@ -1,5 +1,3 @@
-终于完全理解了柯里化的一些思想...
-
 **柯里化（英语：Currying）**，又称为部分求值，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回一个新的函数的技术，新函数接受余下参数并返回运算结果。
 
 柯里化的特点：
@@ -51,9 +49,9 @@ function add(){
 
 ```
 function mul(x) {
-	const result = (y) => mul(x + y); 
-	result.valueOf = () => x;
-	return result;
+    const result = (y) => mul(x + y); 
+    result.valueOf = () => x;
+    return result;
 }
 ```
 
