@@ -72,31 +72,13 @@ Like server {
 有可能，但是您可以确保`fastcgi_intercept_errors`被设置为`ON`，并使用错误页面指令。
 
 ```
-Location
- / {
+Location / {
 
-fastcgi_pass
-127
-.
-0
-.
-01
-:
-9001
-;
+fastcgi_pass 127.0.01:9001;
 
-fastcgi_intercept_errors
-on
-;
+fastcgi_intercept_errors on;
 
-error_page
-502
- =
-503
-/error_page.html;
-
-#…
-
+error_page 502 =503 /error_page.html;
 }
 ```
 
