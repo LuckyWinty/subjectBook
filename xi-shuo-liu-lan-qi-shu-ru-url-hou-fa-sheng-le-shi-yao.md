@@ -96,3 +96,7 @@ SSL协议两个重要概念，SSL会话，SSL连接；SSL连接是点到点的�
 
 [https://segmentfault.com/a/1190000012196642](https://segmentfault.com/a/1190000012196642)
 
+
+
+![](/assets/ssl.png)
+
