@@ -2,7 +2,7 @@
 
 ```
 function get(name){
-    var reg = new RegExp(name+'=([^;]*)?s(;|$)');
+    var reg = new RegExp(name+'=([^;]*)?(;|$)');
     var res = reg.exec(document.cookie);
     if(!res || !res[1])return '';
     try{
