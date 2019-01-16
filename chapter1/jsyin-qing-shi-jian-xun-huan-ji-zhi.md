@@ -26,6 +26,8 @@ JavaScrip中队列数据结构
 
 * 其中每一个任务的执行，无论是macro-task还是micro-task，都是借助函数调用栈来完成。
 
+
+
 参考\(详见\)：[https://www.jianshu.com/p/12b9f73c5a4f](https://www.jianshu.com/p/12b9f73c5a4f)
 
 队列执行规则
