@@ -25,5 +25,5 @@ function get(name){
 
 字符串模版替换
 
-
+replace的方法说明：
 
