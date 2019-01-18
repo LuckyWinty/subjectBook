@@ -23,3 +23,7 @@ function get(name){
 
 [https://www.cnblogs.com/wangqiguo/archive/2012/05/08/2486548.html](https://www.cnblogs.com/wangqiguo/archive/2012/05/08/2486548.html)
 
+字符串模版替换
+
+
+
