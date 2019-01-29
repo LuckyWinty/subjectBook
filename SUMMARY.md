@@ -35,6 +35,7 @@
   * [css动画](cssxiang-guan/cssdong-hua.md)
 * [安全相关](an-quan-xiang-guan.md)
   * [web安全](an-quan-xiang-guan/weban-quan.md)
+    * [xss](an-quan-xiang-guan/weban-quan/xss.md)
 * linux
   * [常用命令](chang-yong-ming-ling.md)
 * 正则
