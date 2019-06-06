@@ -61,6 +61,7 @@
   * [学习指引](node/xue-xi-zhi-yin.md)
 * [一些试题收集](yi-xie-shi-ti-shou-ji.md)
   * [VUE](yi-xie-shi-ti-shou-ji/vue.md)
+  * [JS](yi-xie-shi-ti-shou-ji/js.md)
 * [nginx](nginx.md)
   * [基础](ji-chu.md)
   * [一些面试题](yi-xie-mian-shi-ti.md)
