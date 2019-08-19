@@ -15,62 +15,66 @@ Promise里的关键是要保证，then方法传入的参数onFulfilled 和 onRej
 
 ```
 function Promise(fn) {
-	this.status = 'pendding';//三种状态pendding、resolved、rejected
-	this.value = '';//执行结果
-	this.resolvecbs = [];
-	this.rejectcbs = [];
-	var that = this;
+    this.status = 'pendding';//三种状态pendding、resolved、rejected
+    this.value = '';//执行结果
+    this.resolvecbs = [];
+    this.rejectcbs = [];
+    var that = this;
 
-	try{
-		fn(resolve,reject)
-	}catch(ex){
-		that.reject(ex);
-	}
+    try{
+        fn(resolve,reject)
+    }catch(ex){
+        that.reject(ex);
+    }
 
-	function resolve(val){
-		setTimeout(()=>{
-			if(that.status === 'pendding'){
-				that.status = 'resolved';
-				that.value = val;
-				that.resolvecbs.map((cb)=>{
-					cb(that.value);
-				})
-			}
-		},0)
-	}
-	function reject(){
-		setTimeout(()=>{
-			if(that.status === 'pendding'){
-				that.status = 'rejected';
-				that.value = val;
-				that.rejectcbs.map((cb)=>{
-					cb(that.value);
-				})
-			}
-		},0)
-	}
+    function resolve(val){
+        setTimeout(()=>{
+            if(that.status === 'pendding'){
+                that.status = 'resolved';
+                that.value = val;
+                that.resolvecbs.map((cb)=>{
+                    cb(that.value);
+                })
+            }
+        },0)
+    }
+    function reject(){
+        setTimeout(()=>{
+            if(that.status === 'pendding'){
+                that.status = 'rejected';
+                that.value = val;
+                that.rejectcbs.map((cb)=>{
+                    cb(that.value);
+                })
+            }
+        },0)
+    }
 }
 Promise.prototype.then = function(onfullfilled,onrejected){
-	var that = this;
-	onfullfilled = typeof onfullfilled === 'function'?onfullfilled:v=>v; 
-	onrejected = typeof onrejected === 'function'?onrejected:r=>{throw v};
+    var that = this;
+    onfullfilled = typeof onfullfilled === 'function'?onfullfilled:v=>v; 
+    onrejected = typeof onrejected === 'function'?onrejected:r=>{throw v};
 
-	if(that.status === 'pendding'){
-		that.resolvecbs.push(onfullfilled);
-		that.rejectcbs.push(onrejected)
-	}
-	if(that.status === 'resolved'){
-		that.resolvecbs.map((cb)=>{
-			cb(that.value);
-		})
-	}
-	if(that.status === 'rejected'){
-		that.rejectcbs.map((cb)=>{
-			cb(that.value);
-		})
-	}
+    if(that.status === 'pendding'){
+        that.resolvecbs.push(onfullfilled);
+        that.rejectcbs.push(onrejected)
+    }
+    if(that.status === 'resolved'){
+        that.resolvecbs.map((cb)=>{
+            cb(that.value);
+        })
+    }
+    if(that.status === 'rejected'){
+        that.rejectcbs.map((cb)=>{
+            cb(that.value);
+        })
+    }
 }
 ```
 
 [https://segmentfault.com/a/1190000013396601](https://segmentfault.com/a/1190000013396601)
+
+**链式调用实现**
+
+
 
