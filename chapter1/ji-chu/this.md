@@ -10,3 +10,7 @@
 
  Function.prototype.call 或 Function.prototype.apply 调用。
 
+当函数作为对象的方法被调用时this 指向该对象。
+
+当普通函数方式被调用时，此时的 this 总是指上下文全局对象。在浏览器的 JavaScript 里，全局对象是 window 对象。
+
