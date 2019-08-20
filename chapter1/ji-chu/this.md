@@ -16,5 +16,5 @@
 
 当用 new 运算符调用函数时，该函数总会返回一个对象，通常情况下，构造器里的 this 就指向返回的这个对象。
 
-用 Function.prototype.call 或 Function.prototype.apply 可以动态地改变传入函数的 this
+用 Function.prototype.call 或 Function.prototype.apply 可以动态地改变传入函数的 this
 
