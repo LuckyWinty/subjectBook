@@ -78,3 +78,5 @@ Promise.prototype.then = function(onfullfilled,onrejected){
 
 真正的链式Promise是指在当前promise达到fulfilled状态后，即开始进行下一个promise.
 
+[https://zhuanlan.zhihu.com/p/58428287](https://zhuanlan.zhihu.com/p/58428287)
+
