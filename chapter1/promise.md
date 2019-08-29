@@ -78,5 +78,50 @@ Promise.prototype.then = function(onfullfilled,onrejected){
 
 真正的链式Promise是指在当前promise达到fulfilled状态后，即开始进行下一个promise.
 
+先从结果去看，有如下一段代码：
+
+```
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve({ test: 1 })
+  }, 1000)
+}).then((data) => {
+  console.log('result1', data)
+}).then((data) => {
+  console.log('result2', data)
+})
+//result1 { test: 1 }
+//result2 undefined
+```
+
+显然这里输出了不同的 data。由此可以看出几点：
+
+
+
 [https://zhuanlan.zhihu.com/p/58428287](https://zhuanlan.zhihu.com/p/58428287)
+
+```
+(function getUserId() {
+    return new Promise(function(resolve) {
+        //异步请求
+        http.get(url, function(results) {
+            resolve(results.id)
+        })
+    })
+})()
+.then(getUserJobById)
+.then(function (job) {
+    // 对job的处理
+});
+
+function getUserJobById(id) {
+    return new Promise(function (resolve) {
+        http.get(baseUrl + id, function(job) {
+            resolve(job);
+        });
+    });
+}
+```
+
+
 
