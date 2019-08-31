@@ -84,6 +84,7 @@ Promise.prototype.then = function(onfullfilled,onrejected){
 new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve({ test: 1 })
+    resolve({ test: 2 })
   }, 1000)
 }).then((data) => {
   console.log('result1', data)
@@ -96,7 +97,9 @@ new Promise((resolve, reject) => {
 
 显然这里输出了不同的 data。由此可以看出几点：
 
+1.可进行链式调用，且每次 then 返回了新的实例\(2次打印结果不一致，如果是同一个实例，打印结果应该一致\)。
 
+2.只输出第一次 resolve 的内容
 
 [https://zhuanlan.zhihu.com/p/58428287](https://zhuanlan.zhihu.com/p/58428287)
 
