@@ -91,3 +91,7 @@ $vw_base: 375;
 
 第二，更重要是，如果选择主流的rem弹性布局方式作为项目开发的适配页面方法，那么做法一更适合于后期项目从 rem 单位过渡到 vw 单位。只需要通过改变根元素大小的计算方式，你就可以不需要其他任何的处理，就无缝过渡到另一种CSS单位，更何况vw单位的使用必然会成为一种更好适配方式，目前它只是碍于兼容性的支持而得不到广泛的应用。
 
+特殊布局，特殊处理
+
+[https://mp.weixin.qq.com/s/PrKDFGmJi8Ln8ZbFRnwNoQ](https://mp.weixin.qq.com/s/PrKDFGmJi8Ln8ZbFRnwNoQ)
+
