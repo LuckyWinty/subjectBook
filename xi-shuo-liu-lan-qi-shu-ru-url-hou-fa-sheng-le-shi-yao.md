@@ -1,4 +1,6 @@
-![](/assets/explain.png)
+![](/assets/explain.png)由浏览器进程切入：
+
+![](/assets/process.png)
 
 可以分为以下8点：
 
@@ -95,8 +97,6 @@ SSL协议两个重要概念，SSL会话，SSL连接；SSL连接是点到点的�
 [https://zhuanlan.zhihu.com/p/26682342](https://zhuanlan.zhihu.com/p/26682342)
 
 [https://segmentfault.com/a/1190000012196642](https://segmentfault.com/a/1190000012196642)
-
-
 
 ![](/assets/ssl.png)
 
