@@ -1,6 +1,6 @@
 ![](/assets/explain.png)由浏览器进程切入：
 
-![](/assets/process.png)
+![](/assets/process.png)从图中可以看出，整个过程需要各个进程之间的配合。
 
 可以分为以下8点：
 
