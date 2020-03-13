@@ -81,6 +81,6 @@
   * [TCP/UDP](ji-suan-ji-wang-luo/tcpip.md)
 * [设计模式](she-ji-mo-shi.md)
   * [工厂模式](she-ji-mo-shi/gong-chang-mo-shi.md)
-  * [观察者模式](she-ji-mo-shi/guan-cha-zhe-mo-shi.md)
+  * [观察者模式与发布订阅模式](she-ji-mo-shi/guan-cha-zhe-mo-shi.md)
 * [细说浏览器输入URL后发生了什么](xi-shuo-liu-lan-qi-shu-ru-url-hou-fa-sheng-le-shi-yao.md)
 
